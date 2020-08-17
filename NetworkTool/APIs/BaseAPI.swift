@@ -23,7 +23,7 @@ protocol BaseAPI: SugarTargetType {
 }
 
 extension BaseAPI {
-
+    
     public var baseURL: URL {
         return URL(string: ServerConfigManager.shared().getApiHost())!
     }
@@ -43,4 +43,5 @@ extension BaseAPI {
     public var sampleData: Data {
         return Data()
     }
+    
 }

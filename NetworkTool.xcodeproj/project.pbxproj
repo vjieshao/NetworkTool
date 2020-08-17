@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		417DE3A824EA88D8007B5E41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3A724EA88D8007B5E41 /* AppDelegate.swift */; };
-		417DE3AA24EA88D8007B5E41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3A924EA88D8007B5E41 /* SceneDelegate.swift */; };
 		417DE3AC24EA88D8007B5E41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3AB24EA88D8007B5E41 /* ViewController.swift */; };
 		417DE3AF24EA88D8007B5E41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 417DE3AD24EA88D8007B5E41 /* Main.storyboard */; };
 		417DE3B124EA88DB007B5E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417DE3B024EA88DB007B5E41 /* Assets.xcassets */; };
@@ -19,6 +18,7 @@
 		417DE3C924EA92AC007B5E41 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3C824EA92AC007B5E41 /* BaseModel.swift */; };
 		417DE3CD24EA932B007B5E41 /* ServerConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3CC24EA932B007B5E41 /* ServerConfigManager.swift */; };
 		417DE3D324EA94D6007B5E41 /* CdnAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3D224EA94D6007B5E41 /* CdnAPI.swift */; };
+		534DBF2224EAD75A00D2F930 /* Observable+NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DBF2124EAD75A00D2F930 /* Observable+NetworkTool.swift */; };
 		FE65E3D620803663D90FD94C /* Pods_NetworkTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082899B5724E63E3C8274D8 /* Pods_NetworkTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,6 @@
 		35E0E060E3DEC295CBD62E7B /* Pods-NetworkTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkTool.debug.xcconfig"; path = "Target Support Files/Pods-NetworkTool/Pods-NetworkTool.debug.xcconfig"; sourceTree = "<group>"; };
 		417DE3A424EA88D8007B5E41 /* NetworkTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		417DE3A724EA88D8007B5E41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		417DE3A924EA88D8007B5E41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		417DE3AB24EA88D8007B5E41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		417DE3AE24EA88D8007B5E41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		417DE3B024EA88DB007B5E41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +38,7 @@
 		417DE3C824EA92AC007B5E41 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		417DE3CC24EA932B007B5E41 /* ServerConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigManager.swift; sourceTree = "<group>"; };
 		417DE3D224EA94D6007B5E41 /* CdnAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CdnAPI.swift; sourceTree = "<group>"; };
+		534DBF2124EAD75A00D2F930 /* Observable+NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+NetworkTool.swift"; sourceTree = "<group>"; };
 		DC050830AAD999373CA6ED7B /* Pods-NetworkTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkTool.release.xcconfig"; path = "Target Support Files/Pods-NetworkTool/Pods-NetworkTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,6 @@
 				417DE3BE24EA8B74007B5E41 /* APIs */,
 				417DE3BB24EA88EF007B5E41 /* Network */,
 				417DE3A724EA88D8007B5E41 /* AppDelegate.swift */,
-				417DE3A924EA88D8007B5E41 /* SceneDelegate.swift */,
 				417DE3AB24EA88D8007B5E41 /* ViewController.swift */,
 				417DE3AD24EA88D8007B5E41 /* Main.storyboard */,
 				417DE3B024EA88DB007B5E41 /* Assets.xcassets */,
@@ -101,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				417DE3BC24EA8912007B5E41 /* NetworkTool.swift */,
+				534DBF2124EAD75A00D2F930 /* Observable+NetworkTool.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 		417DE3BE24EA8B74007B5E41 /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				417DE3C424EA9109007B5E41 /* Configs */,
 				417DE3BF24EA8B8A007B5E41 /* BaseAPI.swift */,
 				417DE3D224EA94D6007B5E41 /* CdnAPI.swift */,
+				417DE3C424EA9109007B5E41 /* Configs */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -261,10 +261,10 @@
 				417DE3D324EA94D6007B5E41 /* CdnAPI.swift in Sources */,
 				417DE3AC24EA88D8007B5E41 /* ViewController.swift in Sources */,
 				417DE3A824EA88D8007B5E41 /* AppDelegate.swift in Sources */,
-				417DE3AA24EA88D8007B5E41 /* SceneDelegate.swift in Sources */,
 				417DE3CD24EA932B007B5E41 /* ServerConfigManager.swift in Sources */,
 				417DE3C924EA92AC007B5E41 /* BaseModel.swift in Sources */,
 				417DE3C024EA8B8A007B5E41 /* BaseAPI.swift in Sources */,
+				534DBF2224EAD75A00D2F930 /* Observable+NetworkTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -394,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

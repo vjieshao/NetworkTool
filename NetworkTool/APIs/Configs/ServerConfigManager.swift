@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 enum Host {
+    /// 获取带/api的host
     case api(_ config: ServerConfig)
+    /// 获取host
     case host(_ config: ServerConfig)
     
     var host: String {
@@ -65,6 +68,9 @@ class ServerConfigManager: NSObject {
     /// 配置信息
     private var serverConfig = ServerConfig()
     
+    /// CDN网络请求类
+    private lazy var cdnNetworkService = NetworkTool<CdnAPI>()
+    
     /// 获取apiHost
     func getApiHost() -> String {
         return Host.api(self.serverConfig).host
@@ -85,6 +91,21 @@ class ServerConfigManager: NSObject {
             
         }
         return assigned
+    }
+    
+}
+
+// MARK: - Data Handler
+
+extension ServerConfigManager {
+    
+    /// 获取配置
+    func getConfig(_ version: String, complection: ((_ config: ServerConfig) -> Void)?) {
+        cdnNetworkService
+            .rx
+            .request(.configuration(version: version))
+            .mapObject(type: BaseModel.self)
+        
     }
     
 }
