@@ -1,31 +1,53 @@
 PODS:
   - Alamofire (5.2.2)
+  - CryptoSwift (1.3.1)
   - HandyJSON (5.0.2)
+  - JGProgressHUD (2.1)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - RxSwift (5.1.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - Toast-Swift (5.0.1)
+  - WoodPeckeriOS (1.2.7)
 
 DEPENDENCIES:
   - Alamofire
+  - CryptoSwift
   - HandyJSON
+  - JGProgressHUD
   - Moya
   - RxSwift
+  - SDWebImage
+  - Toast-Swift
+  - WoodPeckeriOS
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - CryptoSwift
     - HandyJSON
+    - JGProgressHUD
     - Moya
     - RxSwift
+    - SDWebImage
+    - Toast-Swift
+    - WoodPeckeriOS
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  WoodPeckeriOS: a6784fc0efaa5491bf924df24fcdd246ad49ab30
 
-PODFILE CHECKSUM: 908c77cf96ee13a0aa70717df57b8e1a28132c24
+PODFILE CHECKSUM: 870bc7603bcc3068bfc6de570c315818ea4ba85c
 
 COCOAPODS: 1.9.2

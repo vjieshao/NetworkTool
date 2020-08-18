@@ -12,5 +12,11 @@ pod 'Moya'
 pod 'Alamofire'
 pod 'RxSwift'
 pod 'HandyJSON'
+pod 'Toast-Swift'
+pod 'JGProgressHUD'
+pod 'CryptoSwift'
+pod 'SDWebImage'
+
+pod 'WoodPeckeriOS', :configurations => ['Debug']
 
 end

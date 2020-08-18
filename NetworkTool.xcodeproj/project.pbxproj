@@ -18,6 +18,9 @@
 		417DE3C924EA92AC007B5E41 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3C824EA92AC007B5E41 /* BaseModel.swift */; };
 		417DE3CD24EA932B007B5E41 /* ServerConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3CC24EA932B007B5E41 /* ServerConfigManager.swift */; };
 		417DE3D324EA94D6007B5E41 /* CdnAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3D224EA94D6007B5E41 /* CdnAPI.swift */; };
+		417DE3D624EB72EC007B5E41 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3D524EB72EC007B5E41 /* NetworkError.swift */; };
+		417DE3DB24EB87DB007B5E41 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3DA24EB87DB007B5E41 /* StringExt.swift */; };
+		417DE3DD24EB8806007B5E41 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DE3DC24EB8806007B5E41 /* DateExt.swift */; };
 		534DBF2224EAD75A00D2F930 /* Observable+NetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534DBF2124EAD75A00D2F930 /* Observable+NetworkTool.swift */; };
 		FE65E3D620803663D90FD94C /* Pods_NetworkTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0082899B5724E63E3C8274D8 /* Pods_NetworkTool.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +41,9 @@
 		417DE3C824EA92AC007B5E41 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		417DE3CC24EA932B007B5E41 /* ServerConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigManager.swift; sourceTree = "<group>"; };
 		417DE3D224EA94D6007B5E41 /* CdnAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CdnAPI.swift; sourceTree = "<group>"; };
+		417DE3D524EB72EC007B5E41 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		417DE3DA24EB87DB007B5E41 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		417DE3DC24EB8806007B5E41 /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		534DBF2124EAD75A00D2F930 /* Observable+NetworkTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+NetworkTool.swift"; sourceTree = "<group>"; };
 		DC050830AAD999373CA6ED7B /* Pods-NetworkTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkTool.release.xcconfig"; path = "Target Support Files/Pods-NetworkTool/Pods-NetworkTool.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +89,7 @@
 		417DE3A624EA88D8007B5E41 /* NetworkTool */ = {
 			isa = PBXGroup;
 			children = (
+				417DE3D724EB85B3007B5E41 /* Extensions */,
 				417DE3C724EA9293007B5E41 /* Models */,
 				417DE3BE24EA8B74007B5E41 /* APIs */,
 				417DE3BB24EA88EF007B5E41 /* Network */,
@@ -99,6 +106,8 @@
 		417DE3BB24EA88EF007B5E41 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				417DE3D424EB72DD007B5E41 /* Errors */,
+				417DE3C424EA9109007B5E41 /* Configs */,
 				417DE3BC24EA8912007B5E41 /* NetworkTool.swift */,
 				534DBF2124EAD75A00D2F930 /* Observable+NetworkTool.swift */,
 			);
@@ -110,7 +119,6 @@
 			children = (
 				417DE3BF24EA8B8A007B5E41 /* BaseAPI.swift */,
 				417DE3D224EA94D6007B5E41 /* CdnAPI.swift */,
-				417DE3C424EA9109007B5E41 /* Configs */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -130,6 +138,23 @@
 				417DE3C824EA92AC007B5E41 /* BaseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		417DE3D424EB72DD007B5E41 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				417DE3D524EB72EC007B5E41 /* NetworkError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		417DE3D724EB85B3007B5E41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				417DE3DC24EB8806007B5E41 /* DateExt.swift */,
+				417DE3DA24EB87DB007B5E41 /* StringExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DC65CF976615BCB852D18BAE /* Pods */ = {
@@ -258,6 +283,7 @@
 			files = (
 				417DE3C624EA9264007B5E41 /* ServerConfig.swift in Sources */,
 				417DE3BD24EA8912007B5E41 /* NetworkTool.swift in Sources */,
+				417DE3DD24EB8806007B5E41 /* DateExt.swift in Sources */,
 				417DE3D324EA94D6007B5E41 /* CdnAPI.swift in Sources */,
 				417DE3AC24EA88D8007B5E41 /* ViewController.swift in Sources */,
 				417DE3A824EA88D8007B5E41 /* AppDelegate.swift in Sources */,
@@ -265,6 +291,8 @@
 				417DE3C924EA92AC007B5E41 /* BaseModel.swift in Sources */,
 				417DE3C024EA8B8A007B5E41 /* BaseAPI.swift in Sources */,
 				534DBF2224EAD75A00D2F930 /* Observable+NetworkTool.swift in Sources */,
+				417DE3DB24EB87DB007B5E41 /* StringExt.swift in Sources */,
+				417DE3D624EB72EC007B5E41 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,12 +438,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 7SPWUV2RU4;
 				INFOPLIST_FILE = NetworkTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackie.NetworkTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -429,12 +459,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 7SPWUV2RU4;
 				INFOPLIST_FILE = NetworkTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jackie.NetworkTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

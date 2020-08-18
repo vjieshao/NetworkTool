@@ -24,7 +24,7 @@ extension CdnAPI {
     public var path: String {
         switch self {
         case let .configuration(version):
-            return "yintao\(version).json"
+            return "config/ios/yintao\(version).json"
         }
     }
     
