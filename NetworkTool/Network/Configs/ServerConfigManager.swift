@@ -61,6 +61,9 @@ struct ServerCommon {
 }
 
 class ServerConfigManager: NSObject {
+    
+    /// 是否为开发人员
+    var isDeveloper: Bool = false
 
     static func shared() -> ServerConfigManager {
         return self.manager
@@ -104,8 +107,86 @@ class ServerConfigManager: NSObject {
 
 extension ServerConfigManager {
     
+    /// 或者配置根目录
+    func getRootPath() -> String? {
+        if var path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last {
+            path.append("/config")
+            //debugPrint(path)
+            if !FileManager.default.fileExists(atPath: path) {
+                do{
+                    try FileManager.default.createDirectory(at: URL.init(fileURLWithPath: path), withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    return nil
+                }
+            }
+            return path
+        }
+        return nil
+    }
+    
+    ///是否需要请求配置
+    func needRequestConfig() -> Bool {
+        if let path = self.getRootPath() {
+            if FileManager.default.fileExists(atPath: "\(path)/config.json") {///有开发人员的配置，直接使用,不需要请求
+                return false
+            } else {
+                return true
+            }
+        }
+        return true
+    }
+    
     /// 获取配置
     func getConfig(_ version: String, onComplection: ((_ config: ServerConfig) -> Void)?, onError: ((_ error: Error) -> Void)? = nil) {
+        if var path = self.getRootPath() {
+            path.append("/config.json")
+            if FileManager.default.fileExists(atPath: path) {///有开发人员的配置，直接使用
+                self.isDeveloper = true
+                if let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: path)) {
+                    if let json = String.init(data: data, encoding: .utf8) {
+                        //debugPrint(json)
+                        if let server = ServerConfig.deserialize(from: json) {
+                            self.serverConfig = server
+                            DispatchQueue.main.async {
+                                onComplection?(server)
+                            }
+                        }
+                    }
+                }
+            } else {
+                self.requestConfig(version, onComplection: onComplection, onError: onError)
+            }
+        }
+    }
+    /// 保存开发配置
+    func saveDeveloperConfig(_ server: String, port: Int) {
+        self.serverConfig.yt_server = server
+        self.serverConfig.yt_port = port
+        
+        let json = self.serverConfig.toJSONString()
+        if var path = self.getRootPath() {
+            path.append("/config.json")
+            self.isDeveloper = true
+            if let data = json?.data(using: .utf8) {
+                try? data.write(to: URL.init(fileURLWithPath: path), options: .atomic)
+            }
+        }
+    }
+    ///移除开发配置
+    func yt_clearDeveloperConfig() {
+        if var path = self.getRootPath() {
+            path.append("/config.json")
+            if FileManager.default.fileExists(atPath: path) {
+                try? FileManager.default.removeItem(atPath: path)
+                if let infoDictionary = Bundle.main.infoDictionary, let majorVersion: String = infoDictionary ["CFBundleShortVersionString"] as? String {
+                    self.requestConfig(majorVersion)
+                }
+            }
+        }
+    }
+    
+    /// 请求配置
+    func requestConfig(_ version: String, onComplection: ((_ config: ServerConfig) -> Void)? = nil, onError: ((_ error: Error) -> Void)? = nil) {
         cdnNetworkService
             .rx
             .request(.configuration(version: version), isRepeat: true)
