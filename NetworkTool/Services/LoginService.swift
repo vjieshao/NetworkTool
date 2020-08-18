@@ -28,6 +28,4 @@ class LoginService {
             .disposed(by: self.disposeBag)
     }
     
-    
-    
 }
