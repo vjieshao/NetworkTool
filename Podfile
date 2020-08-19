@@ -16,6 +16,7 @@ pod 'Toast-Swift'
 pod 'JGProgressHUD'
 pod 'CryptoSwift'
 pod 'SDWebImage'
+pod 'SnapKit'
 
 pod 'WoodPeckeriOS', :configurations => ['Debug']
 

@@ -122,36 +122,36 @@ extension Moya.Response {
                 if self.needToast {
                     if let type = model.tipType, type == "alert" {
                         if let userid: String = unwrappedJSON["userid"] as? String {
-//                            UIAlertController.alert("温馨提示", message: model.msg, cancelTitle: "反馈", sureComplection: { _ in
-//                            }, cancelComplection: { _ in
-////                                let model = YTFeedbackUploadModel()
-////                                model.type = YTFeedbackType.appeal.rawValue
-////                                model.userid = userid
-////                                model.reason = dict?.msg
-////                                let vc = YTFeedbackViewController.init(model)
-////                                YTUtils.gotoViewController(vc)
-//                            })
+                            UIAlertController.alert("温馨提示", message: model.msg, cancelTitle: "反馈", sureComplection: { _ in
+                            }, cancelComplection: { _ in
+//                                let model = YTFeedbackUploadModel()
+//                                model.type = YTFeedbackType.appeal.rawValue
+//                                model.userid = userid
+//                                model.reason = dict?.msg
+//                                let vc = YTFeedbackViewController.init(model)
+//                                YTUtils.gotoViewController(vc)
+                            })
                         } else {
-//                            UIAlertController.alert("温馨提示", message: model.msg, cancelTitle: "", sureTitle: "我知道了", sureComplection: nil)
+                            UIAlertController.alert("温馨提示", message: model.msg, cancelTitle: "", sureTitle: "我知道了", sureComplection: nil)
                         }
                     } else {
                         if model.code == -99999 || model.code == -46 {
                             if let userid: String = unwrappedJSON["userid"] as? String {
-//                                UIAlertController.alert("温馨提示", message: model.msg, cancelTitle: "反馈", sureComplection: { _ in
-//                                    if url?.absoluteString.contains("isRegist") ?? false {
-////                                        let vc = YTVerifyViewController.init(.login, verifyType: .verifyPassword)
-////                                        YTUtils.gotoViewController(vc)
-//                                    }
-//                                }, cancelComplection: { _ in
-////                                    let model = YTFeedbackUploadModel()
-////                                    model.type = YTFeedbackType.appeal.rawValue
-////                                    model.userid = userid
-////                                    model.reason = dict?.msg
-////                                    let vc = YTFeedbackViewController.init(model)
-////                                    YTUtils.gotoViewController(vc)
-//                                })
+                                UIAlertController.alert("温馨提示", message: model.msg, cancelTitle: "反馈", sureComplection: { _ in
+                                    if url?.absoluteString.contains("isRegist") ?? false {
+//                                        let vc = YTVerifyViewController.init(.login, verifyType: .verifyPassword)
+//                                        YTUtils.gotoViewController(vc)
+                                    }
+                                }, cancelComplection: { _ in
+//                                    let model = YTFeedbackUploadModel()
+//                                    model.type = YTFeedbackType.appeal.rawValue
+//                                    model.userid = userid
+//                                    model.reason = dict?.msg
+//                                    let vc = YTFeedbackViewController.init(model)
+//                                    YTUtils.gotoViewController(vc)
+                                })
                             } else {
-//                                UIAlertController.alert("温馨提示", message: model.msg, sureComplection: nil)
+                                UIAlertController.alert("温馨提示", message: model.msg, sureComplection: nil)
                             }
                         } else {
                             if !((model.msg?.contains("network") ?? false) || (model.msg?.contains("time out") ?? false)) {

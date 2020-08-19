@@ -11,6 +11,7 @@ PODS:
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
   - SDWebImage/Core (5.8.4)
+  - SnapKit (5.0.1)
   - Toast-Swift (5.0.1)
   - WoodPeckeriOS (1.2.7)
 
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - Moya
   - RxSwift
   - SDWebImage
+  - SnapKit
   - Toast-Swift
   - WoodPeckeriOS
 
@@ -34,6 +36,7 @@ SPEC REPOS:
     - Moya
     - RxSwift
     - SDWebImage
+    - SnapKit
     - Toast-Swift
     - WoodPeckeriOS
 
@@ -45,9 +48,10 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   WoodPeckeriOS: a6784fc0efaa5491bf924df24fcdd246ad49ab30
 
-PODFILE CHECKSUM: 870bc7603bcc3068bfc6de570c315818ea4ba85c
+PODFILE CHECKSUM: 4e7142a5855fc1388e5991f8c64de14450765477
 
 COCOAPODS: 1.9.2
